@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import HeaderPage from './components/header';
 import { Route, Routes } from 'react-router-dom';
+import FooterPage from './components/footer';
+import Dashboard from './screen/dashboard';
+import Login from './components/core/login';
 
 function App() {
   return (
@@ -21,7 +24,9 @@ function App() {
         </a>
       </header> */}
       <HeaderPage/>
-      
+      <Dashboard/>
+      <FooterPage/>
+      <Login/>
     </div>
   );
 }

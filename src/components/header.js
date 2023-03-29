@@ -1,166 +1,180 @@
-import React from "react";
-// import "screen/css/main.css";
-
-
+import React, { useEffect, useState } from "react";
+import "../screen/css/main.css";
+import "../screen/css/bootstrap.min.css";
+import "../screen/css/normalize.css";
+import "../screen/css/font-awesome.min.css";
+import "../screen/css/icomoon.css";
+import "../screen/css/jquery-ui.css";
+import "../screen/css/owl.carousel.css";
+import "../screen/css/transitions.css";
+import "../screen/css/color.css";
+import "../screen/css/responsive.css";
+import logo from "../screen/css/images/logo.png";
+import LoginForm from "./core/login";
 
 export default function HeaderPage(){
 
+	// useEffect(() => {
+	// 	const script = document.createElement("script");
+	// 	script.src = "../screen/css/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js";
+	// 	script.async = true;
+	// 	document.body.appendChild(script);
+	//   }, []);
+
+	const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+	const handleLoginOpen = () => {
+		setIsLoginOpen(true);
+	};
+
+	const handleLoginClose = () => {
+		setIsLoginOpen(false);
+	};
+
+
     return(
-        <div id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<ul class="tg-addnav">
+        <div id="tg-header" classNameName="tg-header tg-haslayout">
+			{/* <div className="tg-topbar">
+				<div className="container">
+					<div className="row">
+						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<ul className="tg-addnav">
 								<li>
 									<a href="javascript:void(0);">
-										<i class="icon-envelope"></i>
+										<i className="icon-envelope"></i>
 										<em>Contact</em>
 									</a>
 								</li>
 								<li>
 									<a href="javascript:void(0);">
-										<i class="icon-question-circle"></i>
+										<i className="icon-question-circle"></i>
 										<em>Help</em>
 									</a>
 								</li>
 							</ul>
-							<div class="dropdown tg-themedropdown tg-currencydropdown">
-								<a href="javascript:void(0);" id="tg-currenty" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<i class="icon-earth"></i>
-									<span>Currency</span>
-								</a>
-								<ul class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-currenty">
-									<li>
-										<a href="javascript:void(0);">
-											<i>£</i>
-											<span>British Pound</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">
-											<i>$</i>
-											<span>Us Dollar</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0);">
-											<i>€</i>
-											<span>Euro</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-							<div class="tg-userlogin">
+							<div className="tg-userlogin">
 								<figure><a href="javascript:void(0);"><img src="images/users/img-01.jpg" alt="image description"/></a></figure>
 								<span>Hi, John</span>
+								<p>
+									You are currently not logged in.{' '}
+									<a href="#" onClick={handleLoginOpen}>
+										Log in
+									</a>{' '}
+									to access your account.
+								</p>
+								<LoginForm/>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="tg-middlecontainer">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="tg-logo"><a href="index-2.html"><img src="images/logo.png" alt="company name here"/></a></strong>
-							<div class="tg-wishlistandcart">
-								<div class="dropdown tg-themedropdown tg-wishlistdropdown">
-									<a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<span class="tg-themebadge">3</span>
-										<i class="icon-heart"></i>
+			</div> */}
+			<div className="tg-middlecontainer">
+				<div className="container">
+					<div className="row">
+						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<strong className="tg-logo"><a href="index-2.html"><img src={logo} alt="company name here"/></a></strong>
+							<div className="tg-wishlistandcart">
+								{/* <div className="dropdown tg-themedropdown tg-wishlistdropdown">
+									<a href="javascript:void(0);" id="tg-wishlisst" className="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span className="tg-themebadge">3</span>
+										<i className="icon-heart"></i>
 										<span>Wishlist</span>
 									</a>
-									<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
-										<div class="tg-description"><p>No products were added to the wishlist!</p></div>
+									<div className="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-wishlisst">
+										<div className="tg-description"><p>No products were added to the wishlist!</p></div>
 									</div>
-								</div>
-								<div class="dropdown tg-themedropdown tg-minicartdropdown">
-									<a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<span class="tg-themebadge">3</span>
-										<i class="icon-cart"></i>
+								</div> */}
+								<div className="dropdown tg-themedropdown tg-minicartdropdown">
+									<a href="javascript:void(0);" id="tg-minicart" className="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span className="tg-themebadge">3</span>
+										<i className="icon-cart"></i>
 										<span>$123.00</span>
 									</a>
-									<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
-										<div class="tg-minicartbody">
-											<div class="tg-minicarproduct">
+									<div className="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+										<div className="tg-minicartbody">
+											<div className="tg-minicarproduct">
 												<figure>
 													<img src="images/products/img-01.jpg" alt="image description"/>
 													
 												</figure>
-												<div class="tg-minicarproductdata">
+												<div className="tg-minicarproductdata">
 													<h5><a href="javascript:void(0);">Our State Fair Is A Great Function</a></h5>
 													<h6><a href="javascript:void(0);">$ 12.15</a></h6>
 												</div>
 											</div>
-											<div class="tg-minicarproduct">
+											<div className="tg-minicarproduct">
 												<figure>
 													<img src="images/products/img-02.jpg" alt="image description"/>
 													
 												</figure>
-												<div class="tg-minicarproductdata">
+												<div className="tg-minicarproductdata">
 													<h5><a href="javascript:void(0);">Bring Me To Light</a></h5>
 													<h6><a href="javascript:void(0);">$ 12.15</a></h6>
 												</div>
 											</div>
-											<div class="tg-minicarproduct">
+											<div className="tg-minicarproduct">
 												<figure>
 													<img src="images/products/img-03.jpg" alt="image description"/>
 													
 												</figure>
-												<div class="tg-minicarproductdata">
+												<div className="tg-minicarproductdata">
 													<h5><a href="javascript:void(0);">Have Faith In Your Soul</a></h5>
 													<h6><a href="javascript:void(0);">$ 12.15</a></h6>
 												</div>
 											</div>
 										</div>
-										<div class="tg-minicartfoot">
-											<a class="tg-btnemptycart" href="javascript:void(0);">
-												<i class="fa fa-trash-o"></i>
+										<div className="tg-minicartfoot">
+											<a className="tg-btnemptycart" href="javascript:void(0);">
+												<i className="fa fa-trash-o"></i>
 												<span>Clear Your Cart</span>
 											</a>
-											<span class="tg-subtotal">Subtotal: <strong>35.78</strong></span>
-											<div class="tg-btns">
-												<a class="tg-btn tg-active" href="javascript:void(0);">View Cart</a>
-												<a class="tg-btn" href="javascript:void(0);">Checkout</a>
+											<span className="tg-subtotal">Subtotal: <strong>35.78</strong></span>
+											<div className="tg-btns">
+												<a className="tg-btn tg-active" href="javascript:void(0);">View Cart</a>
+												<a className="tg-btn" href="javascript:void(0);">Checkout</a>
 											</div>
 										</div>
 									</div>
 								</div>
+								<div className="tg-userlogin">
+								{/* <figure><a href="javascript:void(0);"><img src="images/users/img-01.jpg" alt="image description"/></a></figure>
+								<span>Hi, John</span> */}
+								<p><a href="#" onClick={handleLoginOpen}>Đăng nhập</a></p>
+								{isLoginOpen && <LoginForm onClose={handleLoginClose} />}
 							</div>
-							<div class="tg-searchbox">
-								<form class="tg-formtheme tg-formsearch">
+							</div>
+							<div className="tg-searchbox">
+								<form className="tg-formtheme tg-formsearch">
 									<fieldset>
-										<input type="text" name="search" class="typeahead form-control" placeholder="Search by title, author, keyword, ISBN..."/>
-										<button type="submit"><i class="icon-magnifier"></i></button>
+										<input type="text" name="search" className="typeahead form-control" placeholder="Search by title, author, keyword, ISBN..."/>
+										<button type="submit"><i className="icon-magnifier"></i></button>
 									</fieldset>
-									<a href="javascript:void(0);">+  Advanced Search</a>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tg-navigationarea">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
+			<div className="tg-navigationarea">
+				<div className="container">
+					<div className="row">
+						<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<nav id="tg-nav" className="tg-nav">
+								<div className="navbar-header">
+									<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
+										<span className="sr-only">Toggle navigation</span>
+										<span className="icon-bar"></span>
+										<span className="icon-bar"></span>
+										<span className="icon-bar"></span>
 									</button>
 								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
+								<div id="tg-navigation" className="collapse navbar-collapse tg-navigation">
 									<ul>
-										<li class="menu-item-has-children menu-item-has-mega-menu">
+										<li className="menu-item-has-children menu-item-has-mega-menu">
 											<a href="javascript:void(0);">All Categories</a>
-											<div class="mega-menu">
-												<ul class="tg-themetabnav" role="tablist">
-													<li role="presentation" class="active">
+											<div className="mega-menu">
+												<ul className="tg-themetabnav" role="tablist">
+													<li role="presentation" className="active">
 														<a href="#artandphotography" aria-controls="artandphotography" role="tab" data-toggle="tab">Art &amp; Photography</a>
 													</li>
 													<li role="presentation">
@@ -190,11 +204,11 @@ export default function HeaderPage(){
 														<a href="#sciencefiction" aria-controls="sciencefiction" role="tab" data-toggle="tab">Science Fiction</a>
 													</li>
 												</ul>
-												<div class="tab-content tg-themetabcontent">
-													<div role="tabpanel" class="tab-pane active" id="artandphotography">
+												<div className="tab-content tg-themetabcontent">
+													<div role="tabpanel" className="tab-pane active" id="artandphotography">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -204,10 +218,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -217,10 +231,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -230,26 +244,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="biography">
+													<div role="tabpanel" className="tab-pane" id="biography">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -259,10 +273,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -272,10 +286,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -285,26 +299,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="childrensbook">
+													<div role="tabpanel" className="tab-pane" id="childrensbook">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -314,10 +328,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -327,10 +341,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -340,26 +354,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="craftandhobbies">
+													<div role="tabpanel" className="tab-pane" id="craftandhobbies">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -369,10 +383,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -382,10 +396,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -395,26 +409,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="crimethriller">
+													<div role="tabpanel" className="tab-pane" id="crimethriller">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -424,10 +438,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -437,10 +451,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -450,26 +464,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="fantasyhorror">
+													<div role="tabpanel" className="tab-pane" id="fantasyhorror">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -479,10 +493,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -492,10 +506,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -505,26 +519,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="fiction">
+													<div role="tabpanel" className="tab-pane" id="fiction">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -534,10 +548,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -547,10 +561,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -560,26 +574,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="fooddrink">
+													<div role="tabpanel" className="tab-pane" id="fooddrink">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -589,10 +603,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -602,10 +616,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -615,26 +629,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="graphicanimemanga">
+													<div role="tabpanel" className="tab-pane" id="graphicanimemanga">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -644,10 +658,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -657,10 +671,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -670,26 +684,26 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
 													</div>
-													<div role="tabpanel" class="tab-pane" id="sciencefiction">
+													<div role="tabpanel" className="tab-pane" id="sciencefiction">
 														<ul>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>History</h2>
 																</div>
 																<ul>
@@ -699,10 +713,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Commodo conseat</a></li>
 																	<li><a href="products.html">Duis aute irure</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Architecture</h2>
 																</div>
 																<ul>
@@ -712,10 +726,10 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Bulldozer Boyz</a></li>
 																	<li><a href="products.html">Build Or Leave On Us</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 															<li>
-																<div class="tg-linkstitle">
+																<div className="tg-linkstitle">
 																	<h2>Art Forms</h2>
 																</div>
 																<ul>
@@ -725,18 +739,18 @@ export default function HeaderPage(){
 																	<li><a href="products.html">Dolore magna aliqua</a></li>
 																	<li><a href="products.html">Ut enim ad minim</a></li>
 																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<a className="tg-btnviewall" href="products.html">View All</a>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"/></figure>
-																<div class="tg-textbox">
+																<div className="tg-textbox">
 																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
+																	<div className="tg-description">
 																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a className="tg-btn" href="products.html">view all</a>
 																</div>
 															</li>
 														</ul>
@@ -744,38 +758,38 @@ export default function HeaderPage(){
 												</div>
 											</div>
 										</li>
-										<li class="menu-item-has-children current-menu-item">
+										<li className="menu-item-has-children current-menu-item">
 											<a href="javascript:void(0);">Home</a>
-											<ul class="sub-menu">
-												<li class="current-menu-item"><a href="index-2.html">Home V one</a></li>
+											{/* <ul className="sub-menu">
+												<li className="current-menu-item"><a href="index-2.html">Home V one</a></li>
 												<li><a href="indexv2.html">Home V two</a></li>
 												<li><a href="indexv3.html">Home V three</a></li>
-											</ul>
+											</ul> */}
 										</li>
-										<li class="menu-item-has-children">
+										<li className="menu-item-has-children">
 											<a href="javascript:void(0);">Authors</a>
-											<ul class="sub-menu">
+											<ul className="sub-menu">
 												<li><a href="authors.html">Authors</a></li>
 												<li><a href="authordetail.html">Author Detail</a></li>
 											</ul>
 										</li>
-										<li><a href="products.html">Best Selling</a></li>
-										<li><a href="products.html">Weekly Sale</a></li>
-										<li class="menu-item-has-children">
+										<li><a href="products.html">Products</a></li>
+										{/* <li><a href="products.html">Weekly Sale</a></li>
+										<li className="menu-item-has-children">
 											<a href="javascript:void(0);">Latest News</a>
-											<ul class="sub-menu">
+											<ul className="sub-menu">
 												<li><a href="newslist.html">News List</a></li>
 												<li><a href="newsgrid.html">News Grid</a></li>
 												<li><a href="newsdetail.html">News Detail</a></li>
 											</ul>
-										</li>
+										</li> */}
 										<li><a href="contactus.html">Contact</a></li>
-										<li class="menu-item-has-children current-menu-item">
-											<a href="javascript:void(0);"><i class="icon-menu"></i></a>
-											<ul class="sub-menu">
-												<li class="menu-item-has-children">
+										<li className="menu-item-has-children current-menu-item">
+											<a href="javascript:void(0);"><i className="icon-menu"></i></a>
+											<ul className="sub-menu">
+												<li className="menu-item-has-children">
 													<a href="aboutus.html">Products</a>
-													<ul class="sub-menu">
+													<ul className="sub-menu">
 														<li><a href="products.html">Products</a></li>
 														<li><a href="productdetail.html">Product Detail</a></li>
 													</ul>
@@ -794,4 +808,4 @@ export default function HeaderPage(){
 			</div>
 		</div>
     )
-}
+};
